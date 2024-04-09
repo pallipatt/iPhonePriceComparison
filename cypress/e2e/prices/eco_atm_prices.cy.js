@@ -4,7 +4,7 @@ const env = Cypress.env("ENV");
 const omni_api_base = getBaseUrl(env, "omni");
 const graphqlApi = `${omni_api_base}/graphql`;
 
-describe("Get premium eligibility", () => {
+describe("Get eco and apple iphone prices", () => {
   let categoryId = "8fbcad05-0bbf-4ba7-ba0c-1d4f36bc1022";
   let carrierName = "UNCLOCKED";
   let latitude = "32.715736";
@@ -13,6 +13,7 @@ describe("Get premium eligibility", () => {
   let lcdOK = true;
   let cracks = false;
   let premiumData = [];
+  const applePrice = [];
 
   const sendGraphQLRequest = (brandName, seriesName, modelName, storageOption) => {
     const graphqlQuery = `
@@ -143,6 +144,7 @@ describe("Get premium eligibility", () => {
   it("iPhone 14 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Pro Max", "iPhone 14 Pro Max", "1TB");
   });
+
   // it("iPhone 15", () => {
   //   sendGraphQLRequest("Apple", "iPhone 15", "iPhone 15", "512GB");
   // });
@@ -155,8 +157,52 @@ describe("Get premium eligibility", () => {
   // it("iPhone 15 Pro Max", () => {
   //   sendGraphQLRequest("Apple", "iPhone 15 Pro Max", "iPhone 15 Pro Max", "1TB");
   // });
+
+  it("get all iphones prices from apple", () => {
+    // Declare an array to store device names and values
+
+    cy.visit("http://apple.com/shop/trade-in");
+    cy.xpath("//a[contains(@href,'/iphone_values')]").click();
+
+    // XPath to select the parent elements containing device names and values
+    cy.xpath("//tbody[@class='t-eyebrow-reduced']/tr").each(($element, index) => {
+      // Get device name and value from each row
+      cy.wrap($element)
+        .find("td")
+        .then(($tds) => {
+          const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
+          const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
+
+          // Store device name and value in the applePrice array
+          applePrice.push({ name: modelName, value: appleDevicePrice });
+        });
+    });
+  });
   // After all tests are executed
   after(() => {
-    console.log(premiumData); // Output the premiumData array after all tests are done
+    cy.writeFile("hello.json", JSON.stringify(premiumData)).then(() => {
+      console.log("Eco ATM prices have been written to eco.json");
+      console.log(premiumData);
+    });
+    cy.writeFile("apple.json", JSON.stringify(applePrice)).then(() => {
+      console.log("Apple ATM prices have been written to applePrice.json");
+      console.log(applePrice);
+    });
+    premiumData.sort((a, b) => a.modelName.localeCompare(b.modelName));
+    applePrice.sort((a, b) => a.name.localeCompare(b.name));
+
+    // Combine the data into the desired format
+    const combinedPrices = applePrice.map((applePrice, index) => {
+      const ecoPrice = premiumData[index];
+      return {
+        id: index + 1,
+        modelName: applePrice.name,
+        applePrice: applePrice.value.split("$")[1],
+        ecoPrice: ecoPrice.ecoAtmPrice
+      };
+    });
+    cy.writeFile("combinedPrices.json", JSON.stringify(combinedPrices)).then(() => {
+      console.log("combined json array");
+    });
   });
 });
