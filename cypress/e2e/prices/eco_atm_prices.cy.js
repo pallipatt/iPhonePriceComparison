@@ -180,7 +180,7 @@ describe("Get eco and apple iphone prices", () => {
   });
   // After all tests are executed
   after(() => {
-    cy.writeFile("hello.json", JSON.stringify(premiumData)).then(() => {
+    cy.writeFile("eco.json", JSON.stringify(premiumData)).then(() => {
       console.log("Eco ATM prices have been written to eco.json");
       console.log(premiumData);
     });
