@@ -201,7 +201,7 @@ describe("Get eco and apple iphone prices", () => {
         ecoPrice: ecoPrice.ecoAtmPrice
       };
     });
-    cy.writeFile("combinedPrices.json", JSON.stringify(combinedPrices)).then(() => {
+    cy.writeFile("data.json", JSON.stringify(combinedPrices)).then(() => {
       console.log("combined json array");
     });
   });
