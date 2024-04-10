@@ -188,3 +188,5 @@ describe("Get eco and apple iphone prices", () => {
     });
   });
 });
+
+// We need  ALL iphones eco prices  for qa and prod in all available grades.
