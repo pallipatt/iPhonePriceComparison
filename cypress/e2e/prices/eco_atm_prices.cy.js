@@ -13,7 +13,7 @@ describe("Get eco and apple iphone prices", () => {
   let lcdOK = true;
   let cracks = false;
   let premiumData = [];
-  const applePrice = [];
+  let applePrice = [];
 
   const sendGraphQLRequest = (brandName, seriesName, modelName, storageOption) => {
     const graphqlQuery = `
