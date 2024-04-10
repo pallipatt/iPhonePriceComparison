@@ -1,14 +1,11 @@
-import { getBaseUrl } from "../../support/premium_price_utilities";
-
-const env = Cypress.env("ENV");
-const omni_api_base = getBaseUrl(env, "omni");
+const omni_api_base = Cypress.env("OMNI_PROD_API_URL");
 const graphqlApi = `${omni_api_base}/graphql`;
 
 describe("Get eco and apple iphone prices", () => {
   let categoryId = "8fbcad05-0bbf-4ba7-ba0c-1d4f36bc1022";
-  let carrierName = "UNCLOCKED";
+  let carrierName = "Unlocked";
   let latitude = "32.715736";
-  let Longitude = "-117.161087";
+  let longitude = "-117.161087";
   let powerUp = true;
   let lcdOK = true;
   let cracks = false;
@@ -43,7 +40,7 @@ describe("Get eco and apple iphone prices", () => {
       lcdOK,
       cracks,
       latitude,
-      Longitude
+      longitude
     };
 
     cy.request({
@@ -57,8 +54,6 @@ describe("Get eco and apple iphone prices", () => {
       expect(graphqlResponse.status).to.equal(200);
       const graphqlData = graphqlResponse.body.data.payout;
       expect(graphqlData.deviceId).to.not.be.null;
-      // if (expectedHybridPriceNotNull) {
-      // expect(graphqlData.hybridPrice).to.not.be.null;
       expect(graphqlData.offer).to.not.be.null;
       const ecoAtmPrice = parseInt(graphqlData.offer);
 
@@ -102,8 +97,8 @@ describe("Get eco and apple iphone prices", () => {
   it("iPhone 11 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 11 Pro Max", "iPhone 11 Pro Max", "512GB");
   });
-  it("iPhone SE", () => {
-    sendGraphQLRequest("Apple", "iphone SE", "iphone SE", "128GB");
+  it("iPhone SE 2nd GEN", () => {
+    sendGraphQLRequest("Apple", "iPhone SE (2020)", "iPhone SE 2020", "128GB");
   });
   it("iPhone 12 Mini", () => {
     sendGraphQLRequest("Apple", "iPhone 12 Mini", "iPhone 12 Mini", "256GB");
@@ -144,19 +139,6 @@ describe("Get eco and apple iphone prices", () => {
   it("iPhone 14 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Pro Max", "iPhone 14 Pro Max", "1TB");
   });
-
-  // it("iPhone 15", () => {
-  //   sendGraphQLRequest("Apple", "iPhone 15", "iPhone 15", "512GB");
-  // });
-  // it("iPhone 15 Plus", () => {
-  //   sendGraphQLRequest("Apple", "iPhone 15 Plus", "iPhone 15 Plus", "512GB");
-  // });
-  // it("iPhone 15 Pro", () => {
-  //   sendGraphQLRequest("Apple", "iPhone 15 Pro", "iPhone 15 Pro", "1TB");
-  // });
-  // it("iPhone 15 Pro Max", () => {
-  //   sendGraphQLRequest("Apple", "iPhone 15 Pro Max", "iPhone 15 Pro Max", "1TB");
-  // });
 
   it("get all iphones prices from apple", () => {
     // Declare an array to store device names and values
