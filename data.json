@@ -1,1 +1,152 @@
-[{"id":1,"modelName":"iPhone 11","applePrice":"180","ecoPrice":125},{"id":2,"modelName":"iPhone 11 Pro","applePrice":"220","ecoPrice":130},{"id":3,"modelName":"iPhone 11 Pro Max","applePrice":"270","ecoPrice":160},{"id":4,"modelName":"iPhone 12","applePrice":"220","ecoPrice":150},{"id":5,"modelName":"iPhone 12 mini","applePrice":"180","ecoPrice":125},{"id":6,"modelName":"iPhone 12 Pro","applePrice":"300","ecoPrice":190},{"id":7,"modelName":"iPhone 12 Pro Max","applePrice":"370","ecoPrice":255},{"id":8,"modelName":"iPhone 13","applePrice":"320","ecoPrice":230},{"id":9,"modelName":"iPhone 13 mini","applePrice":"300","ecoPrice":185},{"id":10,"modelName":"iPhone 13 Pro","applePrice":"420","ecoPrice":320},{"id":11,"modelName":"iPhone 13 Pro Max","applePrice":"500","ecoPrice":395},{"id":12,"modelName":"iPhone 14","applePrice":"400","ecoPrice":295},{"id":13,"modelName":"iPhone 14 Plus","applePrice":"450","ecoPrice":320},{"id":14,"modelName":"iPhone 14 Pro","applePrice":"520","ecoPrice":445},{"id":15,"modelName":"iPhone 14 Pro Max","applePrice":"630","ecoPrice":550},{"id":16,"modelName":"iPhone 7","applePrice":"30","ecoPrice":30},{"id":17,"modelName":"iPhone 7 Plus","applePrice":"50","ecoPrice":28},{"id":18,"modelName":"iPhone 8","applePrice":"50","ecoPrice":50},{"id":19,"modelName":"iPhone 8 Plus","applePrice":"80","ecoPrice":60},{"id":20,"modelName":"iPhone SE (2nd generation)","applePrice":"90","ecoPrice":85},{"id":21,"modelName":"iPhone SE (3rd generation)","applePrice":"160","ecoPrice":60},{"id":22,"modelName":"iPhone X","applePrice":"100","ecoPrice":70},{"id":23,"modelName":"iPhone XR","applePrice":"120","ecoPrice":100},{"id":24,"modelName":"iPhone XS","applePrice":"120","ecoPrice":75},{"id":25,"modelName":"iPhone XS Max","applePrice":"150","ecoPrice":110}]
+[
+    {
+        "id": 1,
+        "modelName": "iPhone 11",
+        "applePrice": "180",
+        "ecoPrice": 125
+    },
+    {
+        "id": 2,
+        "modelName": "iPhone 11 Pro",
+        "applePrice": "220",
+        "ecoPrice": 130
+    },
+    {
+        "id": 3,
+        "modelName": "iPhone 11 Pro Max",
+        "applePrice": "270",
+        "ecoPrice": 160
+    },
+    {
+        "id": 4,
+        "modelName": "iPhone 12",
+        "applePrice": "220",
+        "ecoPrice": 150
+    },
+    {
+        "id": 5,
+        "modelName": "iPhone 12 mini",
+        "applePrice": "180",
+        "ecoPrice": 125
+    },
+    {
+        "id": 6,
+        "modelName": "iPhone 12 Pro",
+        "applePrice": "300",
+        "ecoPrice": 190
+    },
+    {
+        "id": 7,
+        "modelName": "iPhone 12 Pro Max",
+        "applePrice": "370",
+        "ecoPrice": 255
+    },
+    {
+        "id": 8,
+        "modelName": "iPhone 13",
+        "applePrice": "320",
+        "ecoPrice": 230
+    },
+    {
+        "id": 9,
+        "modelName": "iPhone 13 mini",
+        "applePrice": "300",
+        "ecoPrice": 185
+    },
+    {
+        "id": 10,
+        "modelName": "iPhone 13 Pro",
+        "applePrice": "420",
+        "ecoPrice": 320
+    },
+    {
+        "id": 11,
+        "modelName": "iPhone 13 Pro Max",
+        "applePrice": "500",
+        "ecoPrice": 395
+    },
+    {
+        "id": 12,
+        "modelName": "iPhone 14",
+        "applePrice": "400",
+        "ecoPrice": 295
+    },
+    {
+        "id": 13,
+        "modelName": "iPhone 14 Plus",
+        "applePrice": "450",
+        "ecoPrice": 320
+    },
+    {
+        "id": 14,
+        "modelName": "iPhone 14 Pro",
+        "applePrice": "520",
+        "ecoPrice": 445
+    },
+    {
+        "id": 15,
+        "modelName": "iPhone 14 Pro Max",
+        "applePrice": "630",
+        "ecoPrice": 550
+    },
+    {
+        "id": 16,
+        "modelName": "iPhone 7",
+        "applePrice": "30",
+        "ecoPrice": 30
+    },
+    {
+        "id": 17,
+        "modelName": "iPhone 7 Plus",
+        "applePrice": "50",
+        "ecoPrice": 28
+    },
+    {
+        "id": 18,
+        "modelName": "iPhone 8",
+        "applePrice": "50",
+        "ecoPrice": 50
+    },
+    {
+        "id": 19,
+        "modelName": "iPhone 8 Plus",
+        "applePrice": "80",
+        "ecoPrice": 60
+    },
+    {
+        "id": 20,
+        "modelName": "iPhone SE (2nd generation)",
+        "applePrice": "90",
+        "ecoPrice": 85
+    },
+    {
+        "id": 21,
+        "modelName": "iPhone SE (3rd generation)",
+        "applePrice": "160",
+        "ecoPrice": 60
+    },
+    {
+        "id": 22,
+        "modelName": "iPhone X",
+        "applePrice": "100",
+        "ecoPrice": 70
+    },
+    {
+        "id": 23,
+        "modelName": "iPhone XR",
+        "applePrice": "120",
+        "ecoPrice": 100
+    },
+    {
+        "id": 24,
+        "modelName": "iPhone XS",
+        "applePrice": "120",
+        "ecoPrice": 75
+    },
+    {
+        "id": 25,
+        "modelName": "iPhone XS Max",
+        "applePrice": "150",
+        "ecoPrice": 110
+    }
+]
