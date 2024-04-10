@@ -6,3 +6,5 @@
 
  Cache : Ctrl + Shift + R 
  
+/c/Users/steffy.pallipatt/Documents/Work/iPhonePriceComparison
+./run_server.sh 
