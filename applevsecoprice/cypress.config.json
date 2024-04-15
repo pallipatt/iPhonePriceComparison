@@ -1,0 +1,9 @@
+{
+  "defaultCommandTimeut": 50000,
+  "experimentalSourceRewriting": true,
+  "log": true,
+  "debug": true,
+  "retries": {
+    "runMode": 2
+  }
+}
