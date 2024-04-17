@@ -85,12 +85,18 @@ const getPriceForiPhone = async (brandName, { modelName, seriesName, storageOpti
 };
 
 const getAlliPhonePrices = async () => {
-    const prices = {};
+    const prices = [];
     for (const model of iPhoneModels) {
-        prices[model.modelName] = {};
         for (const grade of grades) {
             const price = await getPriceForiPhone("Apple", model, grade);
-            prices[model.modelName][grade.name] = price;
+            prices.push({
+                modelName: model.modelName,
+                seriesName: model.seriesName,
+                storageOption: model.storageOption,
+                carrierName: model.carrierName,
+                grade: grade.name,
+                price: price
+            });
         }
     }
     return prices;

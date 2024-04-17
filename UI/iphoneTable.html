@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone Prices</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone Prices</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link the style.css file -->
 </head>
 <body>
-    <h2>iPhone Prices</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Grade</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody id="priceTableBody"></tbody>
-    </table>
 
-    <script>
-        function loadJSON(file, callback) {
-            var xobj = new XMLHttpRequest();
-            xobj.overrideMimeType("application/json");
-            xobj.open('GET', file, true);
-            xobj.onreadystatechange = function () {
-                if (xobj.readyState == 4 && xobj.status == 200) {
-                    callback(JSON.parse(xobj.responseText));
-                }
-            };
-            xobj.send(null);
-        }
+<h2>iPhone Prices</h2>
 
-        function populateTable() {
-            var prodTableBody = document.getElementById('priceTableBody');
+<table id="iphoneTable">
+    <thead>
+        <tr>
+            <th>Model Name</th>
+            <th>Storage Option</th>
+            <th>Carrier Name</th>
+            <th>Grade</th>
+            <th>QA Price</th>
+            <th>Prod Price</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+</table>
 
-            loadJSON('prod_iphone_prices.json', function(prodData) {
-                loadJSON('qa_iphone_prices.json', function(qaData) {
-                    var models = Object.keys(prodData);
-                    models.forEach(function(model) {
-                        var grades = Object.keys(prodData[model]);
-                        grades.forEach(function(grade) {
-                            var prodPrice = prodData[model][grade];
-                            var qaPrice = qaData[model][grade];
-                            var row = `<tr>
-                                <td>${model}</td>
-                                <td>${grade}</td>
-                                <td>Prod: ${prodPrice}<br>QA: ${qaPrice}</td>
-                            </tr>`;
-                            prodTableBody.innerHTML += row;
-                        });
-                    });
-                });
-            });
-        }
+<script>
+    // Function to fetch and parse JSON data
+    function fetchData(file, callback) {
+        return fetch(file)
+            .then(response => response.json())
+            .then(data => callback(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }
 
-        populateTable();
-    </script>
+    // Function to generate table rows
+    function generateRows(prodData, qaData) {
+        const tableBody = document.getElementById('tableBody');
+        tableBody.innerHTML = '';
+
+        // Merge data based on modelName, storageOption, and carrierName
+        prodData.forEach(prodItem => {
+            const qaItem = qaData.find(item =>
+                item.modelName === prodItem.modelName &&
+                item.storageOption === prodItem.storageOption &&
+                item.carrierName === prodItem.carrierName && 
+                item.grade === prodItem.grade
+            );
+
+            if (qaItem) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${prodItem.modelName}</td>
+                    <td>${prodItem.storageOption}</td>
+                    <td>${prodItem.carrierName}</td>
+                    <td>${prodItem.grade}</td>
+                    <td>${qaItem.price}</td>
+                    <td>${prodItem.price}</td>
+                `;
+                tableBody.appendChild(row);
+            }
+        });
+    }
+
+    // Fetch prod data
+    const prodPromise = fetchData('prod_iphone_prices.json', data => data);
+
+    // Fetch qa data and generate table
+    fetchData('qa_iphone_prices.json', qaData => {
+        prodPromise.then(prodData => generateRows(prodData, qaData));
+    });
+</script>
+
 </body>
 </html>

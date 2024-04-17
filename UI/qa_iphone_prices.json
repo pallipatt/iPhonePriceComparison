@@ -1,1 +1,258 @@
-{"iPhone 15":{"A_YYY":"810","B_NYY":"90","C_YNY":"180","D_NNY":"9","E_YYN":"180","F_NYN":"9","G_YNN":"180","H_NNN":"9"},"iPhone 15 Plus":{"A_YYY":"900","B_NYY":"100","C_YNY":"200","D_NNY":"10","E_YYN":"200","F_NYN":"10","G_YNN":"200","H_NNN":"10"},"iPhone 15 Pro":{"A_YYY":"990","B_NYY":"110","C_YNY":"220","D_NNY":"11","E_YYN":"220","F_NYN":"11","G_YNN":"220","H_NNN":"11"},"iPhone 15 Pro Max":{"A_YYY":"1080","B_NYY":"120","C_YNY":"240","D_NNY":"12","E_YYN":"240","F_NYN":"12","G_YNN":"240","H_NNN":"12"}}
+[
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "A_YYY",
+      "price": "810"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "B_NYY",
+      "price": "90"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "C_YNY",
+      "price": "180"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "D_NNY",
+      "price": "9"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "E_YYN",
+      "price": "180"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "F_NYN",
+      "price": "9"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "G_YNN",
+      "price": "180"
+    },
+    {
+      "modelName": "iPhone 15",
+      "seriesName": "iPhone 15",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "H_NNN",
+      "price": "9"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "A_YYY",
+      "price": "900"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "B_NYY",
+      "price": "100"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "C_YNY",
+      "price": "200"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "D_NNY",
+      "price": "10"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "E_YYN",
+      "price": "200"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "F_NYN",
+      "price": "10"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "G_YNN",
+      "price": "200"
+    },
+    {
+      "modelName": "iPhone 15 Plus",
+      "seriesName": "iPhone 15 Plus",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "H_NNN",
+      "price": "10"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "A_YYY",
+      "price": "990"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "B_NYY",
+      "price": "110"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "C_YNY",
+      "price": "220"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "D_NNY",
+      "price": "11"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "E_YYN",
+      "price": "220"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "F_NYN",
+      "price": "11"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "G_YNN",
+      "price": "220"
+    },
+    {
+      "modelName": "iPhone 15 Pro",
+      "seriesName": "iPhone 15 Pro",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "H_NNN",
+      "price": "11"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "A_YYY",
+      "price": "1080"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "B_NYY",
+      "price": "120"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "C_YNY",
+      "price": "240"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "D_NNY",
+      "price": "12"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "E_YYN",
+      "price": "240"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "F_NYN",
+      "price": "12"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "G_YNN",
+      "price": "240"
+    },
+    {
+      "modelName": "iPhone 15 Pro Max",
+      "seriesName": "iPhone 15 Pro Max",
+      "storageOption": "256GB",
+      "carrierName": "AT&T",
+      "grade": "H_NNN",
+      "price": "12"
+    }
+  ]
