@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Prices</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>iPhone Prices</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Grade</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="priceTableBody"></tbody>
+    </table>
+
+    <script>
+        function loadJSON(file, callback) {
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', file, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == 200) {
+                    callback(JSON.parse(xobj.responseText));
+                }
+            };
+            xobj.send(null);
+        }
+
+        function populateTable() {
+            var prodTableBody = document.getElementById('priceTableBody');
+
+            loadJSON('prod_iphone_prices.json', function(prodData) {
+                loadJSON('qa_iphone_prices.json', function(qaData) {
+                    var models = Object.keys(prodData);
+                    models.forEach(function(model) {
+                        var grades = Object.keys(prodData[model]);
+                        grades.forEach(function(grade) {
+                            var prodPrice = prodData[model][grade];
+                            var qaPrice = qaData[model][grade];
+                            var row = `<tr>
+                                <td>${model}</td>
+                                <td>${grade}</td>
+                                <td>Prod: ${prodPrice}<br>QA: ${qaPrice}</td>
+                            </tr>`;
+                            prodTableBody.innerHTML += row;
+                        });
+                    });
+                });
+            });
+        }
+
+        populateTable();
+    </script>
+</body>
+</html>
