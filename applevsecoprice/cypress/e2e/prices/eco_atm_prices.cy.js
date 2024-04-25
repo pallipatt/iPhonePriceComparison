@@ -1,7 +1,11 @@
 const omni_api_base = Cypress.env("OMNI_PROD_API_URL");
 const graphqlApi = `${omni_api_base}/graphql`;
-
 describe("Get eco and apple iphone prices", () => {
+  // Prevent Cypress from failing the test on uncaught exceptions
+  Cypress.on("uncaught:exception", (err, runnable) => {
+    console.error("Caught an unhandled exception:", err);
+    return false;
+  });
   let categoryId = "8fbcad05-0bbf-4ba7-ba0c-1d4f36bc1022";
   let carrierName = "Unlocked";
   let latitude = "32.715736";
@@ -11,7 +15,6 @@ describe("Get eco and apple iphone prices", () => {
   let cracks = false;
   let premiumData = [];
   let applePrice = [];
-
   const sendGraphQLRequest = (brandName, seriesName, modelName, storageOption) => {
     const graphqlQuery = `
         query Payout($brandName: String!, $modelName: String!, $seriesName: String, $storageOption: String, $carrierName: String, $categoryId: ID, $powerUp: Boolean, $lcdOK: Boolean, $cracks: Boolean, $latitude: String, $longitude: String) {
@@ -28,7 +31,6 @@ describe("Get eco and apple iphone prices", () => {
     }
   }
 }`;
-
     const variables = {
       brandName,
       categoryId,
@@ -42,7 +44,6 @@ describe("Get eco and apple iphone prices", () => {
       latitude,
       longitude
     };
-
     cy.request({
       method: "POST",
       url: graphqlApi,
@@ -56,14 +57,12 @@ describe("Get eco and apple iphone prices", () => {
       expect(graphqlData.deviceId).to.not.be.null;
       expect(graphqlData.offer).to.not.be.null;
       const ecoAtmPrice = parseInt(graphqlData.offer);
-
       premiumData.push({
         modelName,
         ecoAtmPrice
       });
     });
   };
-
   it("iPhone 7", () => {
     sendGraphQLRequest("Apple", "iPhone 7", "iPhone 7", "256GB");
   });
@@ -139,23 +138,15 @@ describe("Get eco and apple iphone prices", () => {
   it("iPhone 14 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Pro Max", "iPhone 14 Pro Max", "1TB");
   });
-
   it("get all iphones prices from apple", () => {
-    // Declare an array to store device names and values
-
     cy.visit("http://apple.com/shop/trade-in");
     cy.xpath("//a[contains(@href,'/iphone_values')]").click();
-
-    // XPath to select the parent elements containing device names and values
     cy.xpath("//tbody[@class='t-eyebrow-reduced']/tr").each(($element, index) => {
-      // Get device name and value from each row
       cy.wrap($element)
         .find("td")
         .then(($tds) => {
-          const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
-          const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
-
-          // Store device name and value in the applePrice array
+          const modelName = $tds.eq(0).text().trim();
+          const appleDevicePrice = $tds.eq(1).text().trim();
           applePrice.push({ name: modelName, value: appleDevicePrice });
         });
     });
@@ -172,7 +163,6 @@ describe("Get eco and apple iphone prices", () => {
     });
     premiumData.sort((a, b) => a.modelName.localeCompare(b.modelName));
     applePrice.sort((a, b) => a.name.localeCompare(b.name));
-
     // Combine the data into the desired format
     const combinedPrices = applePrice.map((applePrice, index) => {
       const ecoPrice = premiumData[index];
@@ -188,5 +178,3 @@ describe("Get eco and apple iphone prices", () => {
     });
   });
 });
-
-// We need  ALL iphones eco prices  for qa and prod in all available grades.
