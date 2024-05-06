@@ -25,7 +25,7 @@ const grades = [
     { name: 'A_YYY', powerUp: true, lcdOK: true, cracks: false },
     { name: 'B_NYY', powerUp: false, lcdOK: true, cracks: false },
     { name: 'C_YNY', powerUp: true, lcdOK: false, cracks: false },
-    { name: 'D_NNY', powerUp: false, lcdOK: false, cracks: true },
+    { name: 'D_NNY', powerUp: false, lcdOK: false, cracks: false },
     { name: 'E_YYN', powerUp: true, lcdOK: true, cracks: true },
     { name: 'F_NYN', powerUp: false, lcdOK: true, cracks: true },
     { name: 'G_YNN', powerUp: true, lcdOK: false, cracks: true },

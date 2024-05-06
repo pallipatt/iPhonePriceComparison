@@ -21,7 +21,7 @@
   
   .move-left {
     position: relative; /* or absolute or fixed, depending on your layout */
-    left: -30px; /* adjust the value as needed */
+    left: 0px; /* adjust the value as needed */
   }
 
   .element {
