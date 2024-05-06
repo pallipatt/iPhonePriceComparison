@@ -144,20 +144,28 @@ describe("Get eco and apple iphone prices", () => {
     // Declare an array to store device names and values
 
     cy.visit("http://apple.com/shop/trade-in");
+    cy.contains("a", "/iphone_values").scrollIntoView();
     cy.xpath("//a[contains(@href,'/iphone_values')]").click();
+   cy.contains('a', 'iPhone').click();
+   cy.get('tbody.t-eyebrow-reduced tr').should('exist');
+
+
 
     // XPath to select the parent elements containing device names and values
+    cy.wait(2000)
     cy.xpath("//tbody[@class='t-eyebrow-reduced']/tr").each(($element, index) => {
+    cy.get('tbody.t-eyebrow-reduced tr').each(($element, index) => {
+    cy.wait(1000)
       // Get device name and value from each row
-      cy.wrap($element)
-        .find("td")
-        .then(($tds) => {
-          const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
-          const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
+    cy.wrap($element)
+      .find("td")
+      .then(($tds) => {
+        const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
+        const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
 
-          // Store device name and value in the applePrice array
-          applePrice.push({ name: modelName, value: appleDevicePrice });
-        });
+        // Store device name and value in the applePrice array
+        applePrice.push({ name: modelName, value: appleDevicePrice });
+      });
     });
   });
   // After all tests are executed
@@ -190,3 +198,4 @@ describe("Get eco and apple iphone prices", () => {
 });
 
 // We need  ALL iphones eco prices  for qa and prod in all available grades.
+});
