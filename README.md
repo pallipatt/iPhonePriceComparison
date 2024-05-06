@@ -1,10 +1,3 @@
-# iPhonePriceComparison
-
- npm install -g http-server    
- Start Server : `http-server` 
-
-
- Cache : Ctrl + Shift + R 
- 
-/c/Users/steffy.pallipatt/Documents/Work/iPhonePriceComparison
+Clone the project from https://github.com/pallipatt/iPhonePriceComparison.git 
+CD into iPhonePriceComparison
 ./run_server.sh 

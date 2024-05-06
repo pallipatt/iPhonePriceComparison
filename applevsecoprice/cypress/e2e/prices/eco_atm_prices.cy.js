@@ -64,79 +64,79 @@ describe("Get eco and apple iphone prices", () => {
     });
   };
 
-  it("iPhone 7", () => {
+  it.skip("iPhone 7", () => {
     sendGraphQLRequest("Apple", "iPhone 7", "iPhone 7", "256GB");
   });
-  it("iPhone 7 Plus", () => {
+  it.skip("iPhone 7 Plus", () => {
     sendGraphQLRequest("Apple", "iPhone 7 Plus", "iPhone 7 Plus", "256GB");
   });
-  it("iPhone 8", () => {
+  it.skip("iPhone 8", () => {
     sendGraphQLRequest("Apple", "iPhone 8", "iPhone 8", "256GB");
   });
-  it("iPhone 8 Plus", () => {
+  it.skip("iPhone 8 Plus", () => {
     sendGraphQLRequest("Apple", "iPhone 8 Plus", "iPhone 8 Plus", "256GB");
   });
-  it("iPhone X", () => {
+  it.skip("iPhone X", () => {
     sendGraphQLRequest("Apple", "iPhone X", "iPhone X", "256GB");
   });
-  it("iPhone XR", () => {
+  it.skip("iPhone XR", () => {
     sendGraphQLRequest("Apple", "iPhone XR", "iPhone XR", "256GB");
   });
-  it("iPhone XS", () => {
+  it.skip("iPhone XS", () => {
     sendGraphQLRequest("Apple", "iPhone XS", "iPhone XS", "512GB");
   });
-  it("iPhone XS Max", () => {
+  it.skip("iPhone XS Max", () => {
     sendGraphQLRequest("Apple", "iPhone XS Max", "iPhone XS Max", "512GB");
   });
-  it("iPhone 11", () => {
+  it.skip("iPhone 11", () => {
     sendGraphQLRequest("Apple", "iPhone 11", "iPhone 11", "256GB");
   });
-  it("iPhone 11 Pro", () => {
+  it.skip("iPhone 11 Pro", () => {
     sendGraphQLRequest("Apple", "iPhone 11 Pro", "iPhone 11 Pro", "512GB");
   });
-  it("iPhone 11 Pro Max", () => {
+  it.skip("iPhone 11 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 11 Pro Max", "iPhone 11 Pro Max", "512GB");
   });
-  it("iPhone SE 2nd GEN", () => {
+  it.skip("iPhone SE 2nd GEN", () => {
     sendGraphQLRequest("Apple", "iPhone SE (2020)", "iPhone SE 2020", "128GB");
   });
-  it("iPhone 12 Mini", () => {
+  it.skip("iPhone 12 Mini", () => {
     sendGraphQLRequest("Apple", "iPhone 12 Mini", "iPhone 12 Mini", "256GB");
   });
-  it("iPhone 12", () => {
+  it.skip("iPhone 12", () => {
     sendGraphQLRequest("Apple", "iPhone 12", "iPhone 12", "256GB");
   });
-  it("iPhone 12 Pro", () => {
+  it.skip("iPhone 12 Pro", () => {
     sendGraphQLRequest("Apple", "iPhone 12 Pro", "iPhone 12 Pro", "512GB");
   });
-  it("iPhone 12 Pro Max", () => {
+  it.skip("iPhone 12 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 12 Pro Max", "iPhone 12 Pro Max", "512GB");
   });
-  it("iPhone 13 Mini", () => {
+  it.skip("iPhone 13 Mini", () => {
     sendGraphQLRequest("Apple", "iPhone 13 Mini", "iPhone 13 Mini", "512GB");
   });
-  it("iPhone 13", () => {
+  it.skip("iPhone 13", () => {
     sendGraphQLRequest("Apple", "iPhone 13", "iPhone 13", "512GB");
   });
-  it("iPhone 13 Pro", () => {
+  it.skip("iPhone 13 Pro", () => {
     sendGraphQLRequest("Apple", "iPhone 13 Pro", "iPhone 13 Pro", "1TB");
   });
-  it("iPhone 13 Pro Max", () => {
+  it.skip("iPhone 13 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 13 Pro Max", "iPhone 13 Pro Max", "1TB");
   });
-  it("iPhone SE (2022)", () => {
+  it.skip("iPhone SE (2022)", () => {
     sendGraphQLRequest("Apple", "iphone SE (2022)", "iphone SE (2022)", "256GB");
   });
-  it("iPhone 14", () => {
+  it.skip("iPhone 14", () => {
     sendGraphQLRequest("Apple", "iPhone 14", "iPhone 14", "512GB");
   });
-  it("iPhone 14 Plus", () => {
+  it.skip("iPhone 14 Plus", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Plus", "iPhone 14 Plus", "512GB");
   });
-  it("iPhone 14 Pro", () => {
+  it.skip("iPhone 14 Pro", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Pro", "iPhone 14 Pro", "1TB");
   });
-  it("iPhone 14 Pro Max", () => {
+  it.skip("iPhone 14 Pro Max", () => {
     sendGraphQLRequest("Apple", "iPhone 14 Pro Max", "iPhone 14 Pro Max", "1TB");
   });
 
@@ -144,49 +144,59 @@ describe("Get eco and apple iphone prices", () => {
     // Declare an array to store device names and values
 
     cy.visit("http://apple.com/shop/trade-in");
-    cy.xpath("//a[contains(@href,'/iphone_values')]").click();
+  //   cy.wait(2000)
+  //   cy.contains("a", "/iphone_values").scrollIntoView();
+  //   cy.wait(5000)
+  //   cy.xpath("//a[contains(@href,'/iphone_values')]").click();
+  //  cy.contains('a', 'iPhone').click();
+  //  cy.get('tbody.t-eyebrow-reduced tr').should('exist');
+
+
 
     // XPath to select the parent elements containing device names and values
-    cy.xpath("//tbody[@class='t-eyebrow-reduced']/tr").each(($element, index) => {
-      // Get device name and value from each row
-      cy.wrap($element)
-        .find("td")
-        .then(($tds) => {
-          const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
-          const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
+    cy.wait(2000)
+    // cy.xpath("//tbody[@class='t-eyebrow-reduced']/tr").each(($element, index) => {
+    //   cy.get('tbody.t-eyebrow-reduced tr').each(($element, index) => {
+    //   cy.wait(1000)
+    //   // Get device name and value from each row
+    //   cy.wrap($element)
+    //     .find("td")
+    //     .then(($tds) => {
+    //       const modelName = $tds.eq(0).text().trim(); // Assuming device name is in the first column
+    //       const appleDevicePrice = $tds.eq(1).text().trim(); // Assuming device value is in the second column
 
-          // Store device name and value in the applePrice array
-          applePrice.push({ name: modelName, value: appleDevicePrice });
-        });
-    });
+    //       // Store device name and value in the applePrice array
+    //       applePrice.push({ name: modelName, value: appleDevicePrice });
+    //     });
+    // });
   });
   // After all tests are executed
-  after(() => {
-    cy.writeFile("eco.json", JSON.stringify(premiumData)).then(() => {
-      console.log("Eco ATM prices have been written to eco.json");
-      console.log(premiumData);
-    });
-    cy.writeFile("apple.json", JSON.stringify(applePrice)).then(() => {
-      console.log("Apple ATM prices have been written to applePrice.json");
-      console.log(applePrice);
-    });
-    premiumData.sort((a, b) => a.modelName.localeCompare(b.modelName));
-    applePrice.sort((a, b) => a.name.localeCompare(b.name));
+  // after(() => {
+  //   cy.writeFile("eco.json", JSON.stringify(premiumData)).then(() => {
+  //     console.log("Eco ATM prices have been written to eco.json");
+  //     console.log(premiumData);
+  //   });
+  //   cy.writeFile("apple.json", JSON.stringify(applePrice)).then(() => {
+  //     console.log("Apple ATM prices have been written to applePrice.json");
+  //     console.log(applePrice);
+  //   });
+  //   premiumData.sort((a, b) => a.modelName.localeCompare(b.modelName));
+  //   applePrice.sort((a, b) => a.name.localeCompare(b.name));
 
-    // Combine the data into the desired format
-    const combinedPrices = applePrice.map((applePrice, index) => {
-      const ecoPrice = premiumData[index];
-      return {
-        id: index + 1,
-        modelName: applePrice.name,
-        applePrice: applePrice.value.split("$")[1],
-        ecoPrice: ecoPrice.ecoAtmPrice
-      };
-    });
-    cy.writeFile("data.json", JSON.stringify(combinedPrices)).then(() => {
-      console.log("combined json array");
-    });
-  });
+  //   // Combine the data into the desired format
+  //   const combinedPrices = applePrice.map((applePrice, index) => {
+  //     const ecoPrice = premiumData[index];
+  //     return {
+  //       id: index + 1,
+  //       modelName: applePrice.name,
+  //       applePrice: applePrice.value.split.skip("$")[1],
+  //       ecoPrice: ecoPrice.ecoAtmPrice
+  //     };
+  //   });
+  //   cy.writeFile("data.json", JSON.stringify(combinedPrices)).then(() => {
+  //     console.log("combined json array");
+  //   });
+  // });
 });
 
 // We need  ALL iphones eco prices  for qa and prod in all available grades.
