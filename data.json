@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "modelName": "iPhone13",
+    "applePrice": "230",
+    "ecoPrice": "250"
+  },
+  {
+    "id": 2,
+    "modelName": "iPhone14",
+    "applePrice": "280",
+    "ecoPrice": "290"
+  },
+  {
+    "id": 3,
+    "modelName": "iPhone15",
+    "applePrice": "430",
+    "ecoPrice": "450"
+  }
+]
